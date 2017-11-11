@@ -1,0 +1,40 @@
+---
+title: "RRT"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+#install.packages("twitteR")
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+install.packages("twitteR")
+
+consumer_key <- "dbWfi30JzOldr4AsLMPvcnDGY"
+consumer_secret <- "TFPD60ipk3WG3qE0oygJuCURMkpJyFH3YHg5QpJzQBDHxC720M"
+access_token <- "929140086951706624-zAPjLf53DTFe8ygdCSaYwLpL2TUcl1g"
+access_secret <- "7HmS3Ebql0xaEa2Urwj8OW64p1jCw0j13uplNTDzf87LJ"
+
+twitteR::setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
+
+twitteR::searchTwitter("terrorism + terrorist + terror",since='2016-07-27',until='2016-07-28',geocode='37.09024,-95.712891,1650mi')
+twitteR::getTrends(23424977)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
