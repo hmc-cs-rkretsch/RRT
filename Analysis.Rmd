@@ -25,8 +25,8 @@ access_secret <- "7HmS3Ebql0xaEa2Urwj8OW64p1jCw0j13uplNTDzf87LJ"
 
 twitteR::setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
-twitteR::searchTwitter("terrorism + terrorist + terror",since='2016-07-27',until='2016-07-28',geocode='37.09024,-95.712891,1650mi')
-twitteR::getTrends(23424977)
+statuses = twitteR::searchTwitter("terrorism",n=100000000000,since='2010-01-01',geocode='37.09024,-95.712891,1650mi')
+#twitteR::getTrends(23424977)
 ```
 
 ## Including Plots
