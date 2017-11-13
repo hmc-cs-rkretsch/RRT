@@ -15,7 +15,6 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
 install.packages("twitteR")
 
 consumer_key <- "dbWfi30JzOldr4AsLMPvcnDGY"
@@ -27,14 +26,122 @@ twitteR::setup_twitter_oauth(consumer_key, consumer_secret, access_token, access
 
 statuses = twitteR::searchTwitter("terrorism",n=100000000000,since='2010-01-01',geocode='37.09024,-95.712891,1650mi')
 #twitteR::getTrends(23424977)
-```
 
 ## Including Plots
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+data=read.csv(header=T,file = "Data.csv")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+
+for (i in 1:ncol(data)) {
+  boxplot(data$Twitter ~ data[, i],xlab=names(data)[i])
+}
+```
+
+```{r}
+
+chisq.test(data$Twitter,data$weaptype1_txt)
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+
+myData <- aggregate(data$Twitter,
+    by = list(weapon = data$weaptype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$weapon,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.75, 
+                  main = "Weapon Type",
+                  ylab = "Trending on Twitter",
+                  #xlab = "Weapon Type",
+                  border = "black", axes = TRUE,
+                  las=2,axisnames = TRUE)
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+
+```
+
+
+```{r}
+
+chisq.test(data$Twitter,data$targtype1_txt)
+
+par(mar=c(8,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$targtype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Target Type",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
+
+```{r}
+
+chisq.test(data$Twitter,data$attacktype1_txt)
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$attacktype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Attack Type",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
