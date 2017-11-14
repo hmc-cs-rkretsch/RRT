@@ -145,3 +145,392 @@ arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
        myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
        code = 3, length = 0.05)
 ```
+
+```{r}
+
+chisq.test(data$Twitter,data$vicinity)
+chisq.test(data$Twitter,data$doubtterr)
+chisq.test(data$Twitter,data$multiple)
+chisq.test(data$Twitter,data$success)
+chisq.test(data$Twitter,data$attacktype1_txt)
+chisq.test(data$Twitter,data$targtype1_txt)
+chisq.test(data$Twitter,data$gname)
+chisq.test(data$Twitter,data$individual)
+chisq.test(data$Twitter,data$nperps)
+chisq.test(data$Twitter,data$npercap)
+chisq.test(data$Twitter,data$claimed)
+chisq.test(data$Twitter,data$weaptype1_txt)
+chisq.test(data$Twitter,data$nkill)
+chisq.test(data$Twitter,data$nkillus)
+chisq.test(data$Twitter,data$nkillter)
+chisq.test(data$Twitter,data$nwound)
+chisq.test(data$Twitter,data$nwoundus)
+chisq.test(data$Twitter,data$nwoundte)
+chisq.test(data$Twitter,data$property)
+chisq.test(data$Twitter,data$propextent_txt)
+chisq.test(data$Twitter,data$ishostkid)
+chisq.test(data$Twitter,data$INT_ANY)
+```
+
+
+```{r}
+dataInd=read.csv(header=T,file = "Data_controlled_individual.csv")
+dataGr=read.csv(header=T,file = "Data_controlled_group.csv")
+dataSmall=read.csv(header=T,file = "Data_controlled_0kill<10wound.csv")
+dataLarge=read.csv(header=T,file = "Data_controlled_>0kill>10wound.csv")
+dataCont=read.csv(header=T,file = "Data_controlled.csv")
+dataCivil=read.csv(header=T,file = "Data_controlled_citizens.csv")
+```
+
+```{r}
+
+chisq.test(dataCont$Twitter,dataCont$vicinity)
+chisq.test(dataCont$Twitter,dataCont$doubtterr)
+chisq.test(dataCont$Twitter,dataCont$multiple)
+chisq.test(dataCont$Twitter,dataCont$success)
+chisq.test(dataCont$Twitter,dataCont$attacktype1_txt)
+chisq.test(dataCont$Twitter,dataCont$targtype1_txt)
+chisq.test(dataCont$Twitter,dataCont$gname)
+chisq.test(dataCont$Twitter,dataCont$individual)
+chisq.test(dataCont$Twitter,dataCont$nperps)
+chisq.test(dataCont$Twitter,dataCont$npercap)
+chisq.test(dataCont$Twitter,dataCont$claimed)
+chisq.test(dataCont$Twitter,dataCont$weaptype1_txt)
+chisq.test(dataCont$Twitter,dataCont$nkill)
+chisq.test(dataCont$Twitter,dataCont$nkillus)
+chisq.test(dataCont$Twitter,dataCont$nkillter)
+chisq.test(dataCont$Twitter,dataCont$nwound)
+chisq.test(dataCont$Twitter,dataCont$nwoundus)
+chisq.test(dataCont$Twitter,dataCont$nwoundte)
+chisq.test(dataCont$Twitter,dataCont$property)
+chisq.test(dataCont$Twitter,dataCont$propextent_txt)
+chisq.test(dataCont$Twitter,dataCont$ishostkid)
+chisq.test(dataCont$Twitter,dataCont$INT_ANY)
+```
+
+
+```{r}
+
+chisq.test(dataInd$Twitter,dataInd$multiple)
+chisq.test(dataInd$Twitter,dataInd$attacktype1_txt)
+chisq.test(dataInd$Twitter,dataInd$targtype1_txt)
+chisq.test(dataInd$Twitter,dataInd$gname)
+chisq.test(dataInd$Twitter,dataInd$nperps)
+chisq.test(dataInd$Twitter,dataInd$npercap)
+chisq.test(dataInd$Twitter,dataInd$claimed)
+chisq.test(dataInd$Twitter,dataInd$weaptype1_txt)
+chisq.test(dataInd$Twitter,dataInd$nkill)
+chisq.test(dataInd$Twitter,dataInd$nkillus)
+chisq.test(dataInd$Twitter,dataInd$nkillter)
+chisq.test(dataInd$Twitter,dataInd$nwound)
+chisq.test(dataInd$Twitter,dataInd$nwoundus)
+chisq.test(dataInd$Twitter,dataInd$nwoundte)
+chisq.test(dataInd$Twitter,dataInd$property)
+chisq.test(dataInd$Twitter,dataInd$propextent_txt)
+chisq.test(dataInd$Twitter,dataInd$ishostkid)
+chisq.test(dataInd$Twitter,dataInd$INT_ANY)
+```
+
+```{r}
+
+chisq.test(dataLarge$Twitter,dataLarge$multiple)
+chisq.test(dataLarge$Twitter,dataLarge$attacktype1_txt)
+chisq.test(dataLarge$Twitter,dataLarge$targtype1_txt)
+chisq.test(dataLarge$Twitter,dataLarge$gname)
+chisq.test(dataLarge$Twitter,dataLarge$nperps)
+chisq.test(dataLarge$Twitter,dataLarge$npercap)
+chisq.test(dataLarge$Twitter,dataLarge$claimed)
+chisq.test(dataLarge$Twitter,dataLarge$weaptype1_txt)
+chisq.test(dataLarge$Twitter,dataLarge$nkill)
+chisq.test(dataLarge$Twitter,dataLarge$nkillus)
+chisq.test(dataLarge$Twitter,dataLarge$nkillter)
+chisq.test(dataLarge$Twitter,dataLarge$nwound)
+chisq.test(dataLarge$Twitter,dataLarge$nwoundus)
+chisq.test(dataLarge$Twitter,dataLarge$nwoundte)
+chisq.test(dataLarge$Twitter,dataLarge$property)
+chisq.test(dataLarge$Twitter,dataLarge$propextent_txt)
+chisq.test(dataLarge$Twitter,dataLarge$ishostkid)
+chisq.test(dataLarge$Twitter,dataLarge$INT_ANY)
+```
+
+```{r}
+
+chisq.test(dataSmall$Twitter,dataSmall$vicinity)
+chisq.test(dataSmall$Twitter,dataSmall$multiple)
+chisq.test(dataSmall$Twitter,dataSmall$attacktype1_txt)
+chisq.test(dataSmall$Twitter,dataSmall$targtype1_txt)
+chisq.test(dataSmall$Twitter,dataSmall$gname)
+chisq.test(dataSmall$Twitter,dataSmall$individual)
+chisq.test(dataSmall$Twitter,dataSmall$nperps)
+chisq.test(dataSmall$Twitter,dataSmall$npercap)
+chisq.test(dataSmall$Twitter,dataSmall$claimed)
+chisq.test(dataSmall$Twitter,dataSmall$weaptype1_txt)
+chisq.test(dataSmall$Twitter,dataSmall$nwound)
+chisq.test(dataSmall$Twitter,dataSmall$nwoundus)
+chisq.test(dataSmall$Twitter,dataSmall$property)
+chisq.test(dataSmall$Twitter,dataSmall$propextent_txt)
+chisq.test(dataSmall$Twitter,dataSmall$INT_ANY)
+```
+
+
+```{r}
+
+chisq.test(dataCivil$Twitter,dataCivil$multiple)
+chisq.test(dataCivil$Twitter,dataCivil$attacktype1_txt)
+chisq.test(dataCivil$Twitter,dataCivil$gname)
+chisq.test(dataCivil$Twitter,dataCivil$individual)
+chisq.test(dataCivil$Twitter,dataCivil$nperps)
+chisq.test(dataCivil$Twitter,dataCivil$npercap)
+chisq.test(dataCivil$Twitter,dataCivil$claimed)
+chisq.test(dataCivil$Twitter,dataCivil$weaptype1_txt)
+chisq.test(dataCivil$Twitter,dataCivil$nkill)
+chisq.test(dataCivil$Twitter,dataCivil$nkillus)
+chisq.test(dataCivil$Twitter,dataCivil$nkillter)
+chisq.test(dataCivil$Twitter,dataCivil$nwound)
+chisq.test(dataCivil$Twitter,dataCivil$nwoundus)
+chisq.test(dataCivil$Twitter,dataCivil$property)
+chisq.test(dataCivil$Twitter,dataCivil$propextent_txt)
+chisq.test(dataCivil$Twitter,dataCivil$INT_ANY)
+```
+
+```{r}
+data=dataCont
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$attacktype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Attack Type",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
+
+```{r}
+data=dataCont
+
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+
+myData <- aggregate(data$Twitter,
+    by = list(weapon = data$weaptype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$weapon,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.75, 
+                  main = "Weapon Type",
+                  ylab = "Trending on Twitter",
+                  #xlab = "Weapon Type",
+                  border = "black", axes = TRUE,
+                  las=2,axisnames = TRUE)
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+
+```
+
+
+```{r}
+data=dataCont
+
+
+par(mar=c(8,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$targtype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Target Type",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
+
+
+```{r}
+data=dataSmall
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$attacktype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Attack Type (Small Attacks)",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
+
+```{r}
+data=dataSmall
+
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+
+myData <- aggregate(data$Twitter,
+    by = list(weapon = data$weaptype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$weapon,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.75, 
+                  main = "Weapon Type (Small Attacks)",
+                  ylab = "Trending on Twitter",
+                  #xlab = "Weapon Type",
+                  border = "black", axes = TRUE,
+                  las=2,axisnames = TRUE)
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+
+```
+
+
+```{r}
+data=dataSmall
+
+
+par(mar=c(8,6,4,2)+0.1,mgp=c(5,1,0))
+
+myData <- aggregate(data$Twitter,
+    by = list(target = data$targtype1_txt),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$target,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.6,
+                  main = "Target Type (Small Attacks)",
+                  ylab = "Trending on Twitter",
+                  border = "black")
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+```
+
+```{r}
+data=dataCont
+
+
+par(mar=c(10,6,4,2)+0.1,mgp=c(5,1,0))
+
+
+myData <- aggregate(data$Twitter,
+    by = list(weapon = data$gname),
+    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                        n = length(x)))
+myData <- do.call(data.frame, myData)
+myData$se <- myData$x.sd / sqrt(myData$x.n)
+
+
+
+barCenters = barplot(height = myData$x.mean,
+                  names.arg = myData$weapon,
+                  beside = true, las = 2,
+                  ylim = c(0, 1),
+                  cex.names = 0.75, 
+                  main = "Group or Identity",
+                  ylab = "Trending on Twitter",
+                  border = "black", axes = TRUE)
+
+
+segments(barCenters, myData$x.mean - myData$se * 2, barCenters,
+         myData$x.mean + myData$se * 2, lwd = 1.5)
+
+arrows(barCenters, myData$x.mean - myData$se * 2, barCenters,
+       myData$x.mean + myData$se * 2, lwd = 1.5, angle = 90,
+       code = 3, length = 0.05)
+
+```
